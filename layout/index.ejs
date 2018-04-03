@@ -11,7 +11,7 @@
 %><meta name="theme-color" content="#2a2b33">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="translucent">
-<%- open_graph({ image: page.thumbnail }) %>
+<%- open_graph({ image: page.thumbnail || theme.avatar || (theme.profile && theme.profile.email ? gravatar(theme.profile.email, 200) : '') }) %>
 <% if (config.feed && config.feed.path) {
 %><link rel="alternate" type="application/rss+xml" title="<%= config.title %>" href="<%= config.feed.path %>">
 <% }
